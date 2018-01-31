@@ -6,7 +6,7 @@ Oreva David Omu
 def squared(num_list):
 	"""
 	Squares numbers in num_list
-	num_list:list of numbers
+	squarenumlist:list of numbers
 	Returns:list of these numbers squared
 	"""
 	squarenumlist = [ ] #define result list
@@ -21,9 +21,20 @@ def check_title(title_list):
 	title_list: list of strings
 	Returns: list of strings that are titles
 	"""
-
 	newstrlist = [ ]
 	for strs in title_list:
 		if strs.istitle(): #checks if if string in the list is title case
 			newstrlist.append(strs)
 	return newstrlist
+
+def restock_inventory(inventory):
+	"""
+	Increases inventory of each item in dictionary by 10
+	inventory: a dictionary with:
+		key: string that is the name of the inventory item
+		value: integer that equals the number of that item currently on hand
+	Returns: updated dictionary where each inventory item is restocked
+	"""
+	updatedinventory = {}
+	for inventories in inventory:
+		inventoies = 
