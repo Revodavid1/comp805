@@ -9,7 +9,7 @@ def home(request):
 
 def resume(request):
 	'''
-	Renders home page
+	Renders resume page
 	'''
 	name = "Omu Oreva"
 	address = "400 Commercial Street, Manchester, NH, 03101"
@@ -19,3 +19,10 @@ def resume(request):
 	context = {'my_name':name,'my_addr':address,'my_phone':phone,"my_email":
 	email,"my_skills":skills}
 	return render(request,'resume.html',context)
+
+def portfolio(request):
+	'''
+	Renders portfolio page
+	'''
+	context = {}
+	return render(request,'portfolio.html',context)
