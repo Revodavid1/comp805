@@ -47,10 +47,11 @@ def filter_0_items(inventory):
 		value: integer that equals the number of that item currently on hand
 	Returns: the same inventory_dict with any item that had 0 quantity removed
 	"""
-	for inventories in inventory:
-		if inventory[inventories] == 0:
-			del inventory[inventories]
-	return inventory
+	newinventory = inventory.copy()
+        for inventoryitem in inventory.keys():
+            if newinventory[inventoryitem] == 0:
+                del newinventory[inventoryitem]
+        return newinventory
 
 def average_grades(grades):
     """
