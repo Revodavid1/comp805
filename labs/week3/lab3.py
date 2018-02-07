@@ -35,10 +35,9 @@ def restock_inventory(inventory):
 		value: integer that equals the number of that item currently on hand
 	Returns: updated dictionary where each inventory item is restocked
 	"""
-	new_inventory = {}
-	for key,val in invetory.items():
-		new_inventory[key] = val + 10
-	return new_inventory
+	for inventories in inventory:
+		inventory[inventories] += 10
+	return inventory
 
 def filter_0_items(inventory):
 	"""
@@ -48,12 +47,10 @@ def filter_0_items(inventory):
 		value: integer that equals the number of that item currently on hand
 	Returns: the same inventory_dict with any item that had 0 quantity removed
 	"""
-	newinventory = inventory.copy()
-        for inventoryitem in inventory.keys():
-            if newinventory[inventoryitem] == 0:
-                del newinventory[inventoryitem]
-
-	return newinventory
+	for inventories in inventory:
+		if inventory[inventories] == 0:
+			del inventory[inventories]
+	return inventory
 
 def average_grades(grades):
     """
