@@ -23,7 +23,7 @@ def check_title(title_list):
 	"""
 	newstrlist = [ ]
 	for strs in title_list:
-		if strs.istitle(): #checks if if string in the list is title case
+		if strs.istitle() and strs.isalpha(): #checks if if string in the list is title case
 			newstrlist.append(strs)
 	return newstrlist
 
@@ -35,9 +35,10 @@ def restock_inventory(inventory):
 		value: integer that equals the number of that item currently on hand
 	Returns: updated dictionary where each inventory item is restocked
 	"""
-	for inventories in inventory:
-		inventory[inventories] += 10
-	return inventory
+	new_inventory = {}
+	for key,val in invetory.items():
+		new_inventory[key] = val + 10
+	return new_inventory
 
 def filter_0_items(inventory):
 	"""
@@ -47,10 +48,12 @@ def filter_0_items(inventory):
 		value: integer that equals the number of that item currently on hand
 	Returns: the same inventory_dict with any item that had 0 quantity removed
 	"""
-	for inventories in inventory:
-		if inventory[inventories] == 0:
-			del inventory[inventories]
-	return inventory
+	newinventory = inventory.copy()
+        for inventoryitem in inventory.keys():
+            if newinventory[inventoryitem] == 0:
+                del newinventory[inventoryitem]
+
+	return newinventory
 
 def average_grades(grades):
     """
