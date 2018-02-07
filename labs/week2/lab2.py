@@ -23,7 +23,7 @@ def check_title(title_list):
 	"""
 	newstrlist = [ ]
 	for strs in title_list:
-		if strs.istitle(): #checks if if string in the list is title case
+		if strs.istitle() and strs.isalpha(): #checks if if string in the list is title case
 			newstrlist.append(strs)
 	return newstrlist
 
