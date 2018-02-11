@@ -8,30 +8,34 @@
 	<p>Phone: {{my_phone}}</p>
 	<p>Email: {{my_email}}</p>
 	<h2>Education</h2>
-	<table>
-		<th>University</th>
+	{% for education in my_education %}
+		<table>
+		<th>Institution</th>
 		<th>|</th>
-		<th>Course</th>
+		<th>Location</th>
 		<th>|</th>
-		<th>From - End</th>
+		<th>Degree</th>
+		<th>|</th>
+		<th>Major</th>
+		<th>|</th>
+		<th>GPA</th>
 		<tr>
-			<td>University of New Hampshire</td>
+			<td>{{education.institution_name}}</td>
 			<td>|</td>
-			<td>MS Information Technology</td>
+			<td>{{education.location}}</td>
 			<td>|</td>
-			<td>2017 - 2019</td>
-		</tr>
-		<tr>
-			<td>University of Benin</td>
+			<td>{{education.degree}}</td>
 			<td>|</td>
-			<td>BS Computer Science</td>
+			<td>{{education.major}}</td>
 			<td>|</td>
-			<td>2008 - 2012</td>
+			<td>{{education.gpa}}</td>
 		</tr>
 	</table>
+	{% endfor %}
 	<h2>Experience</h2>
-	<table>
-		<th>Organization</th>
+	{% for experience in my_experience %}
+		<table>
+		<th>Title</th>
 		<th>|</th>
 		<th>Job Title</th>
 		<th>|</th>
@@ -39,26 +43,19 @@
 		<th>|</th>
 		<th>From - End</th>
 		<tr>
-			<td>SonarSoft Solutions</td>
-			<td>|</td>
-			<td>Mobile App Developer</td>
-			<td>|</td>
-			<td>Development of Android, windows and mobile IOS applications</td>
-			<td>|</td>
-			<td>2014 - Current Date</td>
-		</tr>
 		<tr>
-			<tr>
-			<td>Apex Applications Limited</td>
+			<td>{{experience.title}}</td>
 			<td>|</td>
-			<td>Software Engineering</td>
+			<td>{{experience.location}}</td>
 			<td>|</td>
-			<td>Software Development, testing and client support</td>
+			<td>{{experience.start_date}}</td>
 			<td>|</td>
-			<td>2012 - 2014</td>
-		</tr>
+			<td>{{experience.end_date}}</td>
+			<td>|</td>
+			<td>{{experience.description}}</td>
 		</tr>
 	</table>
+	{% endfor %}
 	<h2>Skills</h2>
 	{% for skills in my_skills %}
 		<ul>
