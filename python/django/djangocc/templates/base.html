@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+		<title>uStudy</title>
+		<link rel='stylesheet' href="{% static 'css/style.css' %}" />
+	</head>
+	<body>
+		
+			<nav>
+				<a href="{% url 'home' %}">uStudy</a> |
+				<a href="{% url 'flashcards:home' %}">Decks</a> |
+				<a href="">About</a> |
+				<a href="">Contacts</a> |
+			</nav>
+			
+			{% block content %}
+
+			{% endblock %}
+	</body>
+</html>
