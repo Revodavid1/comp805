@@ -3,6 +3,7 @@ lab2.py
 Oreva David Omu
 1/30/2018
 """
+
 def squared(num_list):
 	"""
 	Squares numbers in num_list
