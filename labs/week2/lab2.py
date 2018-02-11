@@ -3,6 +3,7 @@ lab2.py
 Oreva David Omu
 1/30/2018
 """
+
 def squared(num_list):
     """
     Squares numbers in num_list
@@ -66,4 +67,4 @@ def average_grades(grades):
     #gets each dictionary and finds it's average
     for i,j in grades.items(): 
         avgofdict[i] = sum(j)/ float(len(j))
-    return avgofdict
+    return avgofdict 
