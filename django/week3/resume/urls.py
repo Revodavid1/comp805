@@ -1,8 +1,9 @@
-from django.contrib import admin
 from django.urls import path
 
 from . import views
 
+app_name="resume"
+
 urlpatterns = [
-   url(r'', views.home, name='home'),
+   path(r'', views.home, name='home'),
 ]
