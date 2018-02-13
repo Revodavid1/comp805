@@ -12,8 +12,8 @@ def squared(num_list):
     """
     squarenumlist = [ ] #define result list
     for nums in num_list: #iterate through num_list
-	    squarenum = pow(nums,2) #square the numbers
-	    squarenumlist.append(squarenum) #add the number to the result list
+        squarenum = pow(nums,2) #square the numbers
+        squarenumlist.append(squarenum) #add the number to the result list
     return squarenumlist
 
 def check_title(title_list):
@@ -24,29 +24,29 @@ def check_title(title_list):
     """
     newstrlist = [ ]
     for strs in title_list:
-	    if strs.istitle() and strs.isalpha(): #checks if if string in the list is title case
-		    newstrlist.append(strs)
+        if strs.istitle() and strs.isalpha(): #checks if if string in the list is title case
+            newstrlist.append(strs)
     return newstrlist
 
 def restock_inventory(inventory):
     """
     Increases inventory of each item in dictionary by 10
     inventory: a dictionary with:
-	    key: string that is the name of the inventory item
-	    value: integer that equals the number of that item currently on hand
+        key: string that is the name of the inventory item
+        value: integer that equals the number of that item currently on hand
     Returns: updated dictionary where each inventory item is restocked
     """
     new_inventory = {}
     for key,val in invetory.items():
-	    new_inventory[key] = val + 10
+        new_inventory[key] = val + 10
     return new_inventory
 
 def filter_0_items(inventory):
     """
     Removes items that have a value of 0 from a dictionary of inventories
     inventory: dictionary with:
-	    key: string that is the name of the inventory item
-	    value: integer that equals the number of that item currently on hand
+        key: string that is the name of the inventory item
+        value: integer that equals the number of that item currently on hand
     Returns: the same inventory_dict with any item that had 0 quantity removed
     """
     newinventory = inventory.copy()
