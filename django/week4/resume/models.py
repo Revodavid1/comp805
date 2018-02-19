@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 
 class Experience(models.Model):
+    parent_resume = models.ForeignKey('Resume',on_delete=models.CASCADE, default=1)
     title = models.CharField(max_length=100,null=False, blank=False)
     location = models.CharField(max_length=100,null=False, blank=False)
     start_date = models.DateField(null=False, blank=False)
