@@ -26,6 +26,12 @@ class Card(models.Model):
             return False
         return True
 
+    def get_prev_card(self):
+        '''
+        Returns previous card in deck
+        '''
+        return self.parentDeck.card_set.filter(id__lt=self.id).last()
+
     def has_next_card(self):
         '''
         Returns true if the card is not the last card
@@ -35,3 +41,9 @@ class Card(models.Model):
         if self == last_card_in_deck:
             return False
         return True
+
+    def get_next_card(self):
+        '''
+        Returns next card in deck
+        '''
+        return self.parentDeck.card_set.filter(id__gt=self.id).first()
