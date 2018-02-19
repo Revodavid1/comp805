@@ -42,13 +42,13 @@ class Resume(models.Model):
         should return last name then first name
         """
         return"{} {}".format(self.Last_name, self.First_name)
-    def get_experiece(self):
+    def get_experience(self):
         """
         return all foreign key related Experience objects
         """
-        pass
+        return self.experience_set.all()
     def get_education(self):
         """
         return all foreign key related Education objects
         """
-        pass
+        return self.education_set.all()
