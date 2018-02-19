@@ -25,3 +25,28 @@ class Education(models.Model):
 class Resume(models.Model):
     First_name = models.CharField(max_length=40,null=False,blank=False)
     Last_name = models.CharField(max_length=40,null=False,blank=False)
+
+    def __str__(self):
+       return self.Last_name
+    
+    def get_full_name(self):
+        """
+        should return full name"
+        """
+        return"{} {}".format(self.First_name, self.Last_name)
+
+    def get_last_name_first_name(self):
+        """
+        should return last name then first name
+        """
+        return"{} {}".format(self.Last_name, self.First_name)
+    def get_experiece(self):
+        """
+        return all foreign key related Experience objects
+        """
+        pass
+    def get_education(self):
+        """
+        return all foreign key related Education objects
+        """
+        pass
