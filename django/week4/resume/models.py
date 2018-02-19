@@ -13,6 +13,7 @@ class Experience(models.Model):
         return self.title
 
 class Education(models.Model):
+    parent_resume = models.ForeignKey('Resume',on_delete=models.CASCADE, default=1)
     institution_name = models.CharField(max_length=100,null=False, blank=False)
     location = models.CharField(max_length=100,null=False, blank=False)
     degree = models.CharField(max_length=20,null=False, blank=False)
@@ -28,7 +29,7 @@ class Resume(models.Model):
 
     def __str__(self):
        return self.Last_name
-    
+
     def get_full_name(self):
         """
         should return full name"
