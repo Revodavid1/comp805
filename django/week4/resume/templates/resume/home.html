@@ -3,13 +3,12 @@
 {% load static %}
 {% block content %}
 	<h1>My Resume</h1>
-	<p>Name: {{my_name}}</p>
+	<p>Name: {{my_res.get_full_name}}</p>
 	<p>Address: {{my_addr}}</p>
 	<p>Phone: {{my_phone}}</p>
 	<p>Email: {{my_email}}</p>
 	<h2>Education</h2>
-	{% for education in my_education %}
-		<table>
+	<table>
 		<th>Institution</th>
 		<th>|</th>
 		<th>Location</th>
@@ -19,6 +18,7 @@
 		<th>Major</th>
 		<th>|</th>
 		<th>GPA</th>
+		{% for education in my_res.get_education %}
 		<tr>
 			<td>{{education.institution_name}}</td>
 			<td>|</td>
@@ -33,8 +33,7 @@
 	</table>
 	{% endfor %}
 	<h2>Experience</h2>
-	{% for experience in my_experiences %}
-		<table>
+	<table>
 		<th>Title</th>
 		<th>|</th>
 		<th>Job Title</th>
@@ -44,6 +43,7 @@
 		<th>From - End</th>
 		<tr>
 		<tr>
+		{% for experience in my_res.get_experience %}
 			<td>{{experience.title}}</td>
 			<td>|</td>
 			<td>{{experience.location}}</td>
