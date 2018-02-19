@@ -56,4 +56,4 @@ class CardTestCase(TestCase):
         '''
         self.assertTrue(self.card1.has_next_card())
         self.assertTrue(self.card2.has_next_card())
-    self.assertFalse(self.card3.has_next_card())
+        self.assertFalse(self.card3.has_next_card())
