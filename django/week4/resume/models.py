@@ -21,3 +21,7 @@ class Education(models.Model):
 
     def __str__(self):
         return self.degree
+
+class Resume(models.Model):
+    First_name = models.CharField(max_length=40,null=False,blank=False)
+    Last_name = models.CharField(max_length=40,null=False,blank=False)
