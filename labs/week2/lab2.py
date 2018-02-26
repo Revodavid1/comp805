@@ -50,9 +50,9 @@ def filter_0_items(inventory):
     Returns: the same inventory_dict with any item that had 0 quantity removed
     """
     newinventory = inventory.copy()
-        for inventoryitem in inventory.keys():
-            if newinventory[inventoryitem] == 0:
-                del newinventory[inventoryitem]
+    for inventoryitem in inventory.keys():
+        if newinventory[inventoryitem] == 0:
+            del newinventory[inventoryitem]
     return newinventory
 
 def average_grades(grades):

@@ -9,6 +9,11 @@ def squared(num_list):
     Squares numbers in num_list
     squarenumlist:list of numbers
     Returns:list of these numbers squared
+
+    >>> squared([1, 2, 3])
+    [1, 4, 9]
+    >>> squared([])
+    []
     """
     squarenumlist = [ ] #define result list
     for nums in num_list: #iterate through num_list
@@ -22,10 +27,13 @@ def check_title(title_list):
     title_list: list of strings
     Returns: list of strings that are titles
     """
+    
     newstrlist = [ ]
+    
     for strs in title_list:
         if strs.istitle() and strs.isalpha(): #checks if if string in the list is title case
             newstrlist.append(strs)
+    
     return newstrlist
 
 def restock_inventory(inventory):
@@ -49,11 +57,13 @@ def filter_0_items(inventory):
         value: integer that equals the number of that item currently on hand
     Returns: the same inventory_dict with any item that had 0 quantity removed
     """
+    '''
     newinventory = inventory.copy()
         for inventoryitem in inventory.keys():
             if newinventory[inventoryitem] == 0:
                 del newinventory[inventoryitem]
     return newinventory
+    '''
 
 def average_grades(grades):
     """
@@ -68,3 +78,7 @@ def average_grades(grades):
     for i,j in grades.items(): 
         avgofdict[i] = sum(j)/ float(len(j))
     return avgofdict 
+
+if __name__ == '__main__':
+    import doctest
+    doctest.testmod()
