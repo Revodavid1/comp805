@@ -46,9 +46,9 @@
 	</div>
 
 	<div id="prob4">
-		<p class='problem'>3. My favorite color is is pink. When I click the button below. I want
+		<p class='problem' id="changepink">3. My favorite color is is pink. When I click the button below. I want
 			this header to change to my favorite color</p>
-		<button>Pink Is My Favorite Color</button>
+		<button onclick="changeheaderpink()" >Pink Is My Favorite Color</button>
 	</div>
 
 	<div id="prob4">
@@ -82,6 +82,9 @@
 	}
 	function btn2_disappear(){
 		document.getElementById("second_btn").style.display = "none"
+	}
+	function changeheaderpink(){
+		document.getElementById("changepink").style.color = "pink"
 	}
 </script>
 </body>
