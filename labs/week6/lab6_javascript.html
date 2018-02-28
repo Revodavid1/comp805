@@ -41,8 +41,8 @@
 	<div id="prob2">
 		<p class='problem'>2. There are two buttons below. When a button is clicked, the other
 			 bottom should appear and the button that was clicked should disappear.</p>
-		<button>Button A: Show B</button>
-		<button>Button B: Show A</button>
+		<button onclick="btn1_disappear()"  id="first_btn">Button A: Show B</button>
+		<button onclick="btn2_disappear()" id="second_btn">Button B: Show A</button>
 	</div>
 
 	<div id="prob4">
@@ -76,6 +76,12 @@
 
 	function changetext(){
 		document.getElementById("clickme").innerHTML = "I was clicked!"
+	}
+	function btn1_disappear(){
+		document.getElementById("first_btn").style.display = "none"
+	}
+	function btn2_disappear(){
+		document.getElementById("second_btn").style.display = "none"
 	}
 </script>
 </body>
