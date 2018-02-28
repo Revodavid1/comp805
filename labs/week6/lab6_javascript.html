@@ -54,8 +54,8 @@
 	<div id="prob4">
 		<p class='problem'>4. I like to say hi to people. There is an unorded list below and a button. When I click the button,
 			I want another list item to appear greeting a new person.</p>
-		<button>Say Hi!</button>
-		<ul></ul>
+		<button onclick="greetpeople()">Say Hi!</button>
+		<ul id ="unorderlist"></ul>
 	</div>
 
 	<div id="prob5">
@@ -85,6 +85,16 @@
 	}
 	function changeheaderpink(){
 		document.getElementById("changepink").style.color = "pink"
+	}
+	function greetpeople(){
+		var mygreeting = "Hi ";
+		var unorderlist = document.getElementById("unorderlist");
+		var people = ["Oreva", "Jon", "Mihaela"];
+		for (var i =0; i < people.length; i++){
+			var listitems = document.createElement("li");
+			listitems.appendChild(document.createTextNode(mygreeting + people[i]));
+			unorderlist.appendChild(listitems);
+		}
 	}
 </script>
 </body>
