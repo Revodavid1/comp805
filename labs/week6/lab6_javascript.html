@@ -61,8 +61,8 @@
 	<div id="prob5">
 		<p class='problem'>5. I like to browse the web. But I'm a nerd, and only use the console.
 			There is a text box and button below. I want to put a url into the text box, click the button, and see the response in the console.</p>
-		<input type="text">
-		<button>Fetch!</button>
+		<input type="text" id="geturl">
+		<button onclick="fetch_data()">Fetch!</button>
 	</div>
 
 	<div id="prob6">
@@ -95,6 +95,16 @@
 			listitems.appendChild(document.createTextNode(mygreeting + people[i]));
 			unorderlist.appendChild(listitems);
 		}
+	}
+	function fetch_data(){
+		var url = document.getElementById('geturl').value;
+		fetch(url).then(function(response) {
+			return response.json();
+		}).then(function(response) {
+			console.log(response);
+		}).catch(function(error){
+			console.log('error');
+		})
 	}
 </script>
 </body>
