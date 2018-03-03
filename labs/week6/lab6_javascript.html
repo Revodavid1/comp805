@@ -3,7 +3,6 @@
 
 <head>
 	<title>Lab 6</title>
-
 	<style>
 		li {
 			list-style: none;
@@ -67,8 +66,8 @@
 
 	<div id="prob6">
 		<p class='problem'>6. I like my data like I like my news...fake. Fill the empty ul below with some fake data from https://jsonplaceholder.typicode.com/ when I click the fetch button.</p>
-		<button>Fetch!</button>
-		<ul></ul>
+		<button onclick="get_fakenews()">Fetch!</button>
+		<ul id="fake_news"></ul>
 	</div>
 
 <script>
@@ -105,6 +104,39 @@
 		}).catch(function(error){
 			console.log('error');
 		})
+	}
+	function get_fakenews(){
+		//h2.setAttribute("background-color",DodgerBlue);
+
+	fetch('http://jsonplaceholder.typicode.com/users/1/posts').then(function(response) {
+	   return response.json(); 
+	}).then(function(json) {
+	  console.log(json);
+	  for (var i = json.length - 1; i >= 0; i--) {
+	  	add_user_to_ul(json[i].title,json[i].body);
+	  }
+	})
+	}
+
+	function add_user_to_ul(title,body){
+		var ul = document.getElementById('fake_news');
+		var newlist = document.createElement("li");
+		var hr = document.createElement("hr");
+
+		var ptitle = document.createElement("h2");
+		var titletext = document.createTextNode(title);
+		ptitle.appendChild(titletext);
+		
+		newlist.appendChild(ptitle);
+
+		var pbody = document.createElement("P");
+		var bodytext = document.createTextNode(body);
+		pbody.appendChild(bodytext);
+		newlist.appendChild(pbody);
+		
+		ul.appendChild(newlist);
+		ul.appendChild(hr);
+		
 	}
 </script>
 </body>
