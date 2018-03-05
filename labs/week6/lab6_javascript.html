@@ -2,142 +2,143 @@
 <html>
 
 <head>
-	<title>Lab 6</title>
-	<style>
-		li {
-			list-style: none;
-		}
+    <title>Lab 6</title>
+    <style>
+        li {
+            list-style: none;
+        }
 
-		.centered {
-			text-align: center;
-		}
+        .centered {
+            text-align: center;
+        }
 
-		.problem {
-			text-size: 1.5em;
-			font-weight: 700;
-			padding: 10px 20px;
-		}
+        .problem {
+            text-size: 1.5em;
+            font-weight: 700;
+            padding: 10px 20px;
+        }
 
-	</style>
+    </style>
 
 </head>
 
 <body>
-	<div class="header centered">
-		<h1>Welcome To Lab 6</h1>
-		<p><small>It's good to see you again, you like nice today.</small></p>
+    <div class="header centered">
+        <h1>Welcome To Lab 6</h1>
+        <p><small>It's good to see you again, you like nice today.</small></p>
 
-		<h3>Instructions</h3>
-		<p>Read, and then do. It's that simple.</p>
-		<p>Add to workspace/labs/week6 and push to git. You get me?</p>
-	</div>
+        <h3>Instructions</h3>
+        <p>Read, and then do. It's that simple.</p>
+        <p>Add to workspace/labs/week6 and push to git. You get me?</p>
+    </div>
 
-	<div id="prob1">
-		<p class='problem'>1. When I click the button below, it should change from "click me!" to "I was clicked!"</p>
-		<button onclick="changetext()" id="clickme">Click Me!</button>
-	</div>
+    <div id="prob1">
+        <p class='problem'>1. When I click the button below, it should change from "click me!" to "I was clicked!"</p>
+        <button onclick="changetext()" id="clickme">Click Me!</button>
+    </div>
 
-	<div id="prob2">
-		<p class='problem'>2. There are two buttons below. When a button is clicked, the other
-			 bottom should appear and the button that was clicked should disappear.</p>
-		<button onclick="btn1_disappear()"  id="first_btn">Button A: Show B</button>
-		<button onclick="btn2_disappear()" id="second_btn">Button B: Show A</button>
-	</div>
+    <div id="prob2">
+        <p class='problem'>2. There are two buttons below. When a button is clicked, the other
+             bottom should appear and the button that was clicked should disappear.</p>
+        <button onclick="btn1_disappear()"  id="first_btn">Button A: Show B</button>
+        <button onclick="btn2_disappear()" id="second_btn">Button B: Show A</button>
+    </div>
 
-	<div id="prob4">
-		<p class='problem' id="changepink">3. My favorite color is is pink. When I click the button below. I want
-			this header to change to my favorite color</p>
-		<button onclick="changeheaderpink()" >Pink Is My Favorite Color</button>
-	</div>
+    <div id="prob4">
+        <p class='problem' id="changepink">3. My favorite color is is pink. When I click the button below. I want
+            this header to change to my favorite color</p>
+        <button onclick="changeheaderpink()" >Pink Is My Favorite Color</button>
+    </div>
 
-	<div id="prob4">
-		<p class='problem'>4. I like to say hi to people. There is an unorded list below and a button. When I click the button,
-			I want another list item to appear greeting a new person.</p>
-		<button onclick="greetpeople()">Say Hi!</button>
-		<ul id ="unorderlist"></ul>
-	</div>
+    <div id="prob4">
+        <p class='problem'>4. I like to say hi to people. There is an unorded list below and a button. When I click the button,
+            I want another list item to appear greeting a new person.</p>
+        <button onclick="greetpeople()">Say Hi!</button>
+        <ul id ="unorderlist"></ul>
+    </div>
 
-	<div id="prob5">
-		<p class='problem'>5. I like to browse the web. But I'm a nerd, and only use the console.
-			There is a text box and button below. I want to put a url into the text box, click the button, and see the response in the console.</p>
-		<input type="text" id="geturl">
-		<button onclick="fetch_data()">Fetch!</button>
-	</div>
+    <div id="prob5">
+        <p class='problem'>5. I like to browse the web. But I'm a nerd, and only use the console.
+            There is a text box and button below. I want to put a url into the text box, click the button, and see the response in the console.</p>
+        <input type="text" id="geturl">
+        <button onclick="fetch_data()">Fetch!</button>
+    </div>
 
-	<div id="prob6">
-		<p class='problem'>6. I like my data like I like my news...fake. Fill the empty ul below with some fake data from https://jsonplaceholder.typicode.com/ when I click the fetch button.</p>
-		<button onclick="get_fakenews()">Fetch!</button>
-		<ul id="fake_news"></ul>
-	</div>
+    <div id="prob6">
+        <p class='problem'>6. I like my data like I like my news...fake. Fill the empty ul below with some fake data from https://jsonplaceholder.typicode.com/ when I click the fetch button.</p>
+        <button onclick="get_fakenews()">Fetch!</button>
+        <ul id="fake_news"></ul>
+    </div>
 
 <script>
-	alert('Have fun! Submit by placing your finished file in workspace/labs/week6 and push to git. Collaborate via slack.');
+    alert('Have fun! Submit by placing your finished file in workspace/labs/week6 and push to git. Collaborate via slack.');
 
-	function changetext(){
-		document.getElementById("clickme").innerHTML = "I was clicked!"
-	}
-	function btn1_disappear(){
-		document.getElementById("first_btn").style.display = "none"
-	}
-	function btn2_disappear(){
-		document.getElementById("second_btn").style.display = "none"
-	}
-	function changeheaderpink(){
-		document.getElementById("changepink").style.color = "pink"
-	}
-	function greetpeople(){
-		var mygreeting = "Hi ";
-		var unorderlist = document.getElementById("unorderlist");
-		var people = ["Oreva", "Jon", "Mihaela"];
-		for (var i =0; i < people.length; i++){
-			var listitems = document.createElement("li");
-			listitems.appendChild(document.createTextNode(mygreeting + people[i]));
-			unorderlist.appendChild(listitems);
-		}
-	}
-	function fetch_data(){
-		var url = document.getElementById('geturl').value;
-		fetch(url).then(function(response) {
-			return response.json();
-		}).then(function(response) {
-			console.log(response);
-		}).catch(function(error){
-			console.log('error');
-		})
-	}
-	function get_fakenews(){
-		//h2.setAttribute("background-color",DodgerBlue);
+    function changetext(){
+        document.getElementById("clickme").innerHTML = "I was clicked!"
+    }
+    function btn1_disappear(){
+        document.getElementById("first_btn").style.display = "none"
+        document.getElementById("second_btn").style.display = "block"
+    }
+    function btn2_disappear(){
+        document.getElementById("second_btn").style.display = "none"
+        document.getElementById("first_btn").style.display = "block"
+    }
+    function changeheaderpink(){
+        document.getElementById("changepink").style.color = "pink"
+    }
+    function greetpeople(){
+        var mygreeting = "Hi ";
+        var unorderlist = document.getElementById("unorderlist");
+        var people = ["Oreva", "Jon", "Mihaela"];
+        for (var i =0; i < people.length; i++){
+            var listitems = document.createElement("li");
+            listitems.appendChild(document.createTextNode(mygreeting + people[i]));
+            unorderlist.appendChild(listitems);
+        }
+    }
+    function fetch_data(){
+        var url = document.getElementById('geturl').value;
+        fetch(url).then(function(response) {
+            return response.json();
+        }).then(function(response) {
+            console.log(response);
+        }).catch(function(error){
+            console.log('error');
+        })
+    }
+    function get_fakenews(){
+        //h2.setAttribute("background-color",DodgerBlue);
 
-	fetch('http://jsonplaceholder.typicode.com/users/1/posts').then(function(response) {
-	   return response.json(); 
-	}).then(function(json) {
-	  console.log(json);
-	  for (var i = json.length - 1; i >= 0; i--) {
-	  	add_user_to_ul(json[i].title,json[i].body);
-	  }
-	})
-	}
+    fetch('http://jsonplaceholder.typicode.com/users/1/posts').then(function(response) {
+       return response.json(); 
+    }).then(function(json) {
+      console.log(json);
+      for (var i = json.length - 1; i >= 0; i--) {
+        add_user_to_ul(json[i].title,json[i].body);
+      }
+    })
+    }
 
-	function add_user_to_ul(title,body){
-		var ul = document.getElementById('fake_news');
-		var newlist = document.createElement("li");
-		var hr = document.createElement("hr");
+    function add_user_to_ul(title,body){
+        var ul = document.getElementById('fake_news');
+        var newlist = document.createElement("li");
+        var hr = document.createElement("hr");
 
-		var ptitle = document.createElement("h2");
-		var titletext = document.createTextNode(title);
-		ptitle.appendChild(titletext);
-		
-		newlist.appendChild(ptitle);
+        var ptitle = document.createElement("h2");
+        var titletext = document.createTextNode(title);
+        ptitle.appendChild(titletext);
+        
+        newlist.appendChild(ptitle);
 
-		var pbody = document.createElement("P");
-		var bodytext = document.createTextNode(body);
-		pbody.appendChild(bodytext);
-		newlist.appendChild(pbody);
-		
-		ul.appendChild(newlist);
-		ul.appendChild(hr);
-		
-	}
+        var pbody = document.createElement("P");
+        var bodytext = document.createTextNode(body);
+        pbody.appendChild(bodytext);
+        newlist.appendChild(pbody);
+        
+        ul.appendChild(newlist);
+        ul.appendChild(hr);
+    }
 </script>
 </body>
 
