@@ -100,16 +100,14 @@
     function fetch_data(){
         var url = document.getElementById('geturl').value;
         fetch(url).then(function(response) {
-            return response.json();
-        }).then(function(response) {
-            console.log(response);
+            return response.text();
+        }).then(function(text) {
+            console.log(text);
         }).catch(function(error){
             console.log('error');
         })
     }
     function get_fakenews(){
-        //h2.setAttribute("background-color",DodgerBlue);
-
     fetch('http://jsonplaceholder.typicode.com/users/1/posts').then(function(response) {
        return response.json(); 
     }).then(function(json) {
